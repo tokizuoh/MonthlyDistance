@@ -8,6 +8,9 @@
 import HealthKit
 
 final class SummaryViewModel: ObservableObject {
+    // TODO: Value
+    @Published var state: ScreenState<String, Error> = .loading
+
     let healthKitClient: HealthKitClient
 
     init(healthKitClient: HealthKitClient) {
@@ -15,27 +18,23 @@ final class SummaryViewModel: ObservableObject {
     }
 
     func onAppear() async {
-        await setupHealthKit()
-        await fetchHealthKitData()
-    }
-
-    private func setupHealthKit() async {
         do {
-            try await healthKitClient.requestAuthorization()
+            try await setupHealthKit()
+            _ = try await fetchHealthKitData()
+            // TODO: Shape and dispatch to View
         } catch {
-            // TODO: Handle Error
+            state = .failed(error)
         }
     }
 
-    private func fetchHealthKitData() async -> [HKSample]? {
-        do {
-            let now = Date()
-            let startOfMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: now)))!
-            let healthKitData = try await healthKitClient.fetchData(for: .distanceWalkingRunning, from: startOfMonth, to: now)
-            return healthKitData
-        } catch {
-            // TODO: Handle Error
-            fatalError()
-        }
+    private func setupHealthKit() async throws {
+        try await healthKitClient.requestAuthorization()
+    }
+
+    private func fetchHealthKitData() async throws -> [HKSample]? {
+        let now = Date()
+        let startOfMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: now)))!
+        let healthKitData = try await healthKitClient.fetchData(for: .distanceWalkingRunning, from: startOfMonth, to: now)
+        return healthKitData
     }
 }

@@ -14,6 +14,7 @@
 		73C62A1C2998AA6800AD3712 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A1B2998AA6800AD3712 /* SummaryViewModel.swift */; };
 		73C62A202998AC0300AD3712 /* HealthKitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A1F2998AC0300AD3712 /* HealthKitClient.swift */; };
 		73C62A262998B2F600AD3712 /* SummaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A252998B2F600AD3712 /* SummaryBuilder.swift */; };
+		73C62A2A2998BE7900AD3712 /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A292998BE7900AD3712 /* ScreenState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		73C62A1F2998AC0300AD3712 /* HealthKitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitClient.swift; sourceTree = "<group>"; };
 		73C62A212998AC1D00AD3712 /* MonthlyDistance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonthlyDistance.entitlements; sourceTree = "<group>"; };
 		73C62A252998B2F600AD3712 /* SummaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryBuilder.swift; sourceTree = "<group>"; };
+		73C62A292998BE7900AD3712 /* ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		73C62A1D2998ABD300AD3712 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				73C62A272998BE4600AD3712 /* UI */,
 				73C62A1E2998ABDC00AD3712 /* HealthKit */,
 			);
 			path = Core;
@@ -108,6 +111,14 @@
 				73C62A1F2998AC0300AD3712 /* HealthKitClient.swift */,
 			);
 			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		73C62A272998BE4600AD3712 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				73C62A292998BE7900AD3712 /* ScreenState.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				731DF93529989776001DE818 /* MonthlyDistanceApp.swift in Sources */,
+				73C62A2A2998BE7900AD3712 /* ScreenState.swift in Sources */,
 				73C62A202998AC0300AD3712 /* HealthKitClient.swift in Sources */,
 				73C62A262998B2F600AD3712 /* SummaryBuilder.swift in Sources */,
 				73C62A182998A63200AD3712 /* SummaryScreen.swift in Sources */,
