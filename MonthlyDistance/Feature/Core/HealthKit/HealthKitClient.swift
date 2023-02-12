@@ -34,22 +34,18 @@ final class HealthKitClient {
         try await healthStore.requestAuthorization(toShare: Set([]), read: readTypes)
     }
 
-    func fetchData(for type: HealthKitDataType, from: Date, to: Date) async throws -> [HKSample]? {
+    // TODO: Generalize
+    func fetchHKStatistics(for type: HealthKitDataType, from: Date, to: Date) async throws -> HKStatistics? {
         guard case .distanceWalkingRunning = type else {
             return nil
         }
 
-        let descriptor = HKSampleQueryDescriptor(
-            predicates: [
-                .sample(
-                    type: HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
-                    predicate: HKQuery.predicateForSamples(withStart: from, end: to, options: [])
-                )
-            ],
-            sortDescriptors: []
-        )
+        let quantityType = HKQuantityType(.distanceWalkingRunning)
+        let predicate = HKQuery.predicateForSamples(withStart: from, end: to)
+        let samplePredicate = HKSamplePredicate.quantitySample(type: quantityType, predicate: predicate)
 
-        let samples = try await descriptor.result(for: healthStore)
-        return samples
+        let query = HKStatisticsQueryDescriptor(predicate: samplePredicate, options: .cumulativeSum)
+        let statistics = try await query.result(for: healthStore)
+        return statistics
     }
 }

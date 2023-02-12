@@ -20,7 +20,7 @@ final class SummaryViewModel: ObservableObject {
     func onAppear() async {
         do {
             try await setupHealthKit()
-            _ = try await fetchHealthKitData()
+            _ = try await fetchStatistics()
             // TODO: Shape and dispatch to View
         } catch {
             state = .failed(error)
@@ -31,10 +31,10 @@ final class SummaryViewModel: ObservableObject {
         try await healthKitClient.requestAuthorization()
     }
 
-    private func fetchHealthKitData() async throws -> [HKSample]? {
+    private func fetchStatistics() async throws -> HKStatistics? {
         let now = Date()
         let startOfMonth = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: now)))!
-        let healthKitData = try await healthKitClient.fetchData(for: .distanceWalkingRunning, from: startOfMonth, to: now)
+        let healthKitData = try await healthKitClient.fetchHKStatistics(for: .distanceWalkingRunning, from: startOfMonth, to: now)
         return healthKitData
     }
 }
