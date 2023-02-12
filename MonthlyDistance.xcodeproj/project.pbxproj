@@ -12,6 +12,8 @@
 		731DF93C29989777001DE818 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731DF93B29989777001DE818 /* Preview Assets.xcassets */; };
 		73C62A182998A63200AD3712 /* SummaryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A172998A63200AD3712 /* SummaryScreen.swift */; };
 		73C62A1C2998AA6800AD3712 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A1B2998AA6800AD3712 /* SummaryViewModel.swift */; };
+		73C62A202998AC0300AD3712 /* HealthKitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A1F2998AC0300AD3712 /* HealthKitClient.swift */; };
+		73C62A262998B2F600AD3712 /* SummaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A252998B2F600AD3712 /* SummaryBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,9 @@
 		731DF93B29989777001DE818 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		73C62A172998A63200AD3712 /* SummaryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryScreen.swift; sourceTree = "<group>"; };
 		73C62A1B2998AA6800AD3712 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		73C62A1F2998AC0300AD3712 /* HealthKitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitClient.swift; sourceTree = "<group>"; };
+		73C62A212998AC1D00AD3712 /* MonthlyDistance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonthlyDistance.entitlements; sourceTree = "<group>"; };
+		73C62A252998B2F600AD3712 /* SummaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 		731DF93329989776001DE818 /* MonthlyDistance */ = {
 			isa = PBXGroup;
 			children = (
+				73C62A212998AC1D00AD3712 /* MonthlyDistance.entitlements */,
 				73C62A162998A61900AD3712 /* Feature */,
 				731DF93429989776001DE818 /* MonthlyDistanceApp.swift */,
 				731DF93829989777001DE818 /* Assets.xcassets */,
@@ -72,6 +78,7 @@
 		73C62A162998A61900AD3712 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				73C62A1D2998ABD300AD3712 /* Core */,
 				73C62A192998A9B800AD3712 /* Summary */,
 			);
 			path = Feature;
@@ -82,8 +89,25 @@
 			children = (
 				73C62A172998A63200AD3712 /* SummaryScreen.swift */,
 				73C62A1B2998AA6800AD3712 /* SummaryViewModel.swift */,
+				73C62A252998B2F600AD3712 /* SummaryBuilder.swift */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		73C62A1D2998ABD300AD3712 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				73C62A1E2998ABDC00AD3712 /* HealthKit */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		73C62A1E2998ABDC00AD3712 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				73C62A1F2998AC0300AD3712 /* HealthKitClient.swift */,
+			);
+			path = HealthKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				731DF93529989776001DE818 /* MonthlyDistanceApp.swift in Sources */,
+				73C62A202998AC0300AD3712 /* HealthKitClient.swift in Sources */,
+				73C62A262998B2F600AD3712 /* SummaryBuilder.swift in Sources */,
 				73C62A182998A63200AD3712 /* SummaryScreen.swift in Sources */,
 				73C62A1C2998AA6800AD3712 /* SummaryViewModel.swift in Sources */,
 			);
@@ -307,12 +333,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MonthlyDistance/MonthlyDistance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MonthlyDistance/Preview Content\"";
 				DEVELOPMENT_TEAM = 2YRXH6ZZZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Use it to visualize your health and workout data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,12 +364,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MonthlyDistance/MonthlyDistance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MonthlyDistance/Preview Content\"";
 				DEVELOPMENT_TEAM = 2YRXH6ZZZY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Use it to visualize your health and workout data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

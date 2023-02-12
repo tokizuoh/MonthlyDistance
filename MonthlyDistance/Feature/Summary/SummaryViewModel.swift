@@ -7,4 +7,22 @@
 
 import Foundation
 
-final class SummaryViewModel: ObservableObject {}
+final class SummaryViewModel: ObservableObject {
+    let healthKitClient: HealthKitClient
+
+    init(healthKitClient: HealthKitClient) {
+        self.healthKitClient = healthKitClient
+    }
+
+    func onAppear() async {
+        await setupHealthKit()
+    }
+
+    private func setupHealthKit() async {
+        do {
+            try await healthKitClient.requestAuthorization()
+        } catch {
+            // TODO: Handle Error
+        }
+    }
+}

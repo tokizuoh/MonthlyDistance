@@ -11,7 +11,7 @@ import SwiftUI
 struct MonthlyDistanceApp: App {
     var body: some Scene {
         WindowGroup {
-            SummaryScreen()
+            SummaryBuilder().build()
         }
     }
 }

@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct SummaryScreen: View {
+    @ObservedObject var viewModel: SummaryViewModel
+
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct SummaryScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SummaryScreen()
+            .task(viewModel.onAppear)
     }
 }
