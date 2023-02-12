@@ -61,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				73C62A212998AC1D00AD3712 /* MonthlyDistance.entitlements */,
+				73C62A1D2998ABD300AD3712 /* Core */,
 				73C62A162998A61900AD3712 /* Feature */,
 				731DF93429989776001DE818 /* MonthlyDistanceApp.swift */,
 				731DF93829989777001DE818 /* Assets.xcassets */,
@@ -80,7 +81,6 @@
 		73C62A162998A61900AD3712 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				73C62A1D2998ABD300AD3712 /* Core */,
 				73C62A192998A9B800AD3712 /* Summary */,
 			);
 			path = Feature;
