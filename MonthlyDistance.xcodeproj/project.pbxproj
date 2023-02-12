@@ -75,6 +75,7 @@
 			buildConfigurationList = 731DF93F29989777001DE818 /* Build configuration list for PBXNativeTarget "MonthlyDistance" */;
 			buildPhases = (
 				731DF92D29989776001DE818 /* Sources */,
+				731DF94229989E8E001DE818 /* Custom: Run SwiftLint */,
 				731DF92E29989776001DE818 /* Frameworks */,
 				731DF92F29989776001DE818 /* Resources */,
 			);
@@ -131,6 +132,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		731DF94229989E8E001DE818 /* Custom: Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Custom: Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin\nswiftlint --fix --format\nswiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		731DF92D29989776001DE818 /* Sources */ = {

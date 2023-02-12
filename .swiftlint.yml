@@ -1,0 +1,27 @@
+included:
+  - MonthlyDistance
+
+identifier_name:
+  min_length:
+    warning: 1
+    error: 1
+
+type_name:
+  min_length:
+    warning: 1
+    error: 1
+
+line_length:
+  warning: 300
+  error: 500
+
+function_body_length:
+  warning: 100
+  error: 200
+
+opt_in_rules:
+  - closure_spacing
+  - indentation_width
+
+disabled_rules:
+  - force_cast
