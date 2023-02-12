@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		731DF93529989776001DE818 /* MonthlyDistanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DF93429989776001DE818 /* MonthlyDistanceApp.swift */; };
-		731DF93729989776001DE818 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DF93629989776001DE818 /* ContentView.swift */; };
 		731DF93929989777001DE818 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731DF93829989777001DE818 /* Assets.xcassets */; };
 		731DF93C29989777001DE818 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731DF93B29989777001DE818 /* Preview Assets.xcassets */; };
+		73C62A182998A63200AD3712 /* SummaryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C62A172998A63200AD3712 /* SummaryScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		731DF93129989776001DE818 /* MonthlyDistance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonthlyDistance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		731DF93429989776001DE818 /* MonthlyDistanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyDistanceApp.swift; sourceTree = "<group>"; };
-		731DF93629989776001DE818 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		731DF93829989777001DE818 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		731DF93B29989777001DE818 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		73C62A172998A63200AD3712 /* SummaryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,8 @@
 		731DF93329989776001DE818 /* MonthlyDistance */ = {
 			isa = PBXGroup;
 			children = (
+				73C62A162998A61900AD3712 /* Feature */,
 				731DF93429989776001DE818 /* MonthlyDistanceApp.swift */,
-				731DF93629989776001DE818 /* ContentView.swift */,
 				731DF93829989777001DE818 /* Assets.xcassets */,
 				731DF93A29989777001DE818 /* Preview Content */,
 			);
@@ -65,6 +65,14 @@
 				731DF93B29989777001DE818 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		73C62A162998A61900AD3712 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				73C62A172998A63200AD3712 /* SummaryScreen.swift */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				731DF93729989776001DE818 /* ContentView.swift in Sources */,
 				731DF93529989776001DE818 /* MonthlyDistanceApp.swift in Sources */,
+				73C62A182998A63200AD3712 /* SummaryScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
