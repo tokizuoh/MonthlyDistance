@@ -70,9 +70,17 @@
 		73C62A162998A61900AD3712 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				73C62A172998A63200AD3712 /* SummaryScreen.swift */,
+				73C62A192998A9B800AD3712 /* Summary */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		73C62A192998A9B800AD3712 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				73C62A172998A63200AD3712 /* SummaryScreen.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
